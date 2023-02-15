@@ -1,0 +1,39 @@
+{%extends 'base.html'%}
+
+{%block title%} Nutrition Helper: {{recipe['name']}} {%endblock%}
+
+{%block body%}
+
+<img src="/static/images/{{recipename}}.jpg" alt="{{recipename}}" class="headerimg">
+<div class="body recipebody">
+    
+    <p class="date">Created: 12.02.2023</p>
+    <div class="grid_values">
+        <h1>{{recipe['name']}}</h1>
+        <p class="grid_value_start">Kcal: {{recipe['kcal']}}</p>
+        <p>Carbs: {{recipe['carbs']}}g</p>
+        <p>Protein: {{recipe['protein']}}g</p>
+        <p>Fat: {{recipe['fat']}}g</p>
+    </div>
+
+    <div class="Ingredients">
+        <h2>Ingredients:</h2>
+        <ul>
+            <li>3 Eggs</li>
+            <li>2 Olives</li>
+            <li>2ml Milk</li>
+        </ul>
+    </div>
+
+    <div class="Instructions">
+        <h2>Instructions:</h2>
+        <ul>
+            <li>Whisk the eggs together</li>
+            <li>Chop the olives and add them to the eggs</li>
+            <li>Add some milk to the eggs</li>
+            <li>Cook everything in a pan for 3 minutes</li>
+        </ul>
+    </div>
+</div>
+
+{%endblock%}

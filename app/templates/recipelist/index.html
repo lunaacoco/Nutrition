@@ -1,0 +1,104 @@
+{%extends 'base.html'%}
+
+{%block title%} Nutrition Helper {%endblock%}
+
+{%block body%}
+    
+<div class="header">
+    <div class="body">
+        <a href="/" style="text-decoration: none; color: black;"><h1 class="home">Home</h1></a>
+        <div class="grid_values">
+            <h2 class="grid_text">Your entered values:</h2>
+            <p>Calories</p>
+            <p>Carbs</p>
+            <p>Proteins</p>
+            <p>Fat</p>
+            <p class="grid_value_start">832 kcal</p>
+            <p>20g</p>
+            <p>30g</p>
+            <p>7g</p>
+        </div>
+    </div>
+</div>
+
+
+<div class="recipes body">
+
+    {% for slug, recipe in recipes.items() %}
+        <div class="grid_values">
+            <a href="/{{slug}}" style="text-decoration: none; color: black;"><h3>{{recipe['name']}}</h3></a>
+            <p class="grid_value_start">{{recipe['kcal']}}</p>
+            <p>{{recipe['carbs']}}</p>
+            <p>{{recipe['protein']}}</p>
+            <p>{{recipe['fat']}}</p>
+        </div>
+    {%endfor%}
+
+    <!--
+    <div class="values">
+        <h3>Second Recipe</h3>
+        <p class="grid_values">800 kcal</p>
+        <p>21g</p>
+        <p>29g</p>
+        <p>8g</p>
+    </div>
+
+    <div class="values">
+        <h3>Third Recipe</h3>
+        <p class="grid_values">800 kcal</p>
+        <p>21g</p>
+        <p>29g</p>
+        <p>8g</p>
+    </div>
+
+    <div class="values">
+        <h3>Omelette</h3>
+        <p class="grid_values">800 kcal</p>
+        <p>21g</p>
+        <p>29g</p>
+        <p>8g</p>
+    </div>
+    
+    <div class="values">
+        <h3>Second Recipe</h3>
+        <p class="grid_values">800 kcal</p>
+        <p>21g</p>
+        <p>29g</p>
+        <p>8g</p>
+    </div>
+
+    <div class="values">
+        <h3>Third Recipe</h3>
+        <p class="grid_values">800 kcal</p>
+        <p>21g</p>
+        <p>29g</p>
+        <p>8g</p>
+    </div>
+
+    <div class="values">
+        <h3>Omelette</h3>
+        <p class="grid_values">800 kcal</p>
+        <p>21g</p>
+        <p>29g</p>
+        <p>8g</p>
+    </div>
+    
+    <div class="values">
+        <h3>Second Recipe</h3>
+        <p class="grid_values">800 kcal</p>
+        <p>21g</p>
+        <p>29g</p>
+        <p>8g</p>
+    </div>
+
+    <div class="values">
+        <h3>Third Recipe</h3>
+        <p class="grid_values">800 kcal</p>
+        <p>21g</p>
+        <p>29g</p>
+        <p>8g</p>
+    </div>
+</div>
+-->
+
+{%endblock%}

@@ -1,0 +1,32 @@
+{%extends 'base.html'%}
+
+{%block title%} Nutrition Helper {%endblock%}
+
+{%block body%}
+<div class="body">
+    <h1 class="welcome">Hello</h1>
+    <h2 class="introduction">Please enter your missing nutrients:</h2>
+
+    <div class="form">
+        <div>
+            <label for="kcal">Calories:</label>
+            <input type="number" name="kcal"> kcal
+        </div>
+        <div>
+            <label for="carbs">Carbs:</label>
+            <input type="number" name="carbs"> g
+        </div>
+        <div>
+            <label for="protein">Protein:</label>
+            <input type="number" name="protein"> g
+        </div>
+        <div>        
+            <label for="fat">Fat:</label>
+            <input type="number" name="fat"> g
+        </div>
+    </div>
+    <div class="submitform">
+        <a href="/recipelist"><button class="button">Let´s go!</button></a>
+    </div>
+</div>
+{%endblock%}
