@@ -1,0 +1,8 @@
+Name of Recipe5
+slugofrecipe5
+123
+456.5
+345
+3.7
+Ingredients Milk Oil Bla
+CONTENT Content Steps

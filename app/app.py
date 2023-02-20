@@ -1,4 +1,4 @@
-from flask import Flask, render_template
+from flask import Flask
 from . import recipelist, simple_pages
 from app.extentions.database import db, migrate
 

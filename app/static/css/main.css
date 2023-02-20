@@ -12,6 +12,8 @@ body {
     transform: translate(-50%);
     position: absolute;
 }
+
+
 /*Introduction text on landing page*/
 .welcome {
     text-align: center;
