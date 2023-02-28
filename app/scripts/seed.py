@@ -7,6 +7,26 @@ if __name__ == '__main__':
     app = create_app()
     app.app_context().push()
 
+#add data to the database using a text file
+with open('C:/users/emily/programmierenzeugs/nutrition/app/scripts/recipe.txt') as recipe:
+    name = recipe.readline()
+    slug = recipe.readline()
+    kcal = int(recipe.readline())
+    carbs = recipe.readline()
+    protein = recipe.readline()
+    fat = recipe.readline()
+    picture_url = '../../static/images/' + slug + '.jpg'
+    ingredients = recipe.readline()
+    content = recipe.read()
+
+new_recipe = Recipe(name=name, slug=slug, kcal=kcal, carbs=carbs, protein=protein, fat=fat, picture_url=picture_url, ingredients=ingredients, content=content)
+db.session.add(new_recipe)
+
+
+
+db.session.commit()
+
+
 """
 new_recipe = Recipe(
     slug= 'pancake-waffle',
@@ -35,20 +55,3 @@ for slug, recipe in recipe_data.items():
   new_recipe = Recipe(slug=slug, name=recipe['name'], kcal=recipe['kcal'], carbs=recipe['carbs'], protein=recipe['protein'], fat=recipe['fat'], picture_url = '../app/static/images/' + slug + '.jpg', ingredients=recipe['ingredients'], content=recipe['content'])
   db.session.add(new_recipe)
 """
-with open('C:/users/emily/programmierenzeugs/nutrition/app/scripts/recipe.txt') as recipe:
-    name = recipe.readline()
-    slug = recipe.readline()
-    kcal = int(recipe.readline())
-    carbs = recipe.readline()
-    protein = recipe.readline()
-    fat = recipe.readline()
-    picture_url = '../../static/images/' + slug + '.jpg'
-    ingredients = recipe.readline()
-    content = recipe.read()
-
-new_recipe = Recipe(name=name, slug=slug, kcal=kcal, carbs=carbs, protein=protein, fat=fat, picture_url=picture_url, ingredients=ingredients, content=content)
-db.session.add(new_recipe)
-
-
-
-db.session.commit()

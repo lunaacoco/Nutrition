@@ -1,6 +1,8 @@
 from app.extentions.database import db
 from datetime import datetime
 
+#Defines the database and the columns within
+
 class Recipe(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     slug=db.Column(db.String(80), unique = True) #String ist max 80 Zeichen lang

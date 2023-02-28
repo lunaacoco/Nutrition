@@ -2,6 +2,7 @@ from flask import Flask
 from . import recipelist, simple_pages
 from app.extentions.database import db, migrate
 
+#This file brings all templates and the database together and initialises the Flask server to be run 
 
 def create_app():
     app = Flask(__name__)
