@@ -16,6 +16,10 @@ def post_recipelist():
     maxprotein = 1000
     minfat = 0
     maxfat = 1000
+    kcal = '---'
+    carbs = '---'
+    protein = '---'
+    fat = '---'
     #the variables above give a base value to the filter, so that if nothing is given in the form,
     #the filter will "ignore" it by just giving everything between this ridiculous high values
 
@@ -56,8 +60,7 @@ def post_recipelist():
             Recipe.fat >= minfat, Recipe.fat <= maxfat
         )
     )
-
-    return render_template('recipelist/index2.html', recipes=recipes)
+    return render_template('recipelist/index2.html', recipes=recipes, kcal=kcal, carbs=carbs, protein=protein, fat=fat)
 
 @blueprint.get('/recipelist')
 def get_recipelist():
@@ -68,8 +71,9 @@ def get_recipelist():
 @blueprint.route('/recipe/<id>')
 def recipe(id):
     recipe = Recipe.query.get(id)
-    print(recipe)
-    return render_template('recipe/index2.html', recipe=recipe)
+    Ingredients = recipe.ingredients.split(';')
+    Instructions = recipe.content.split(';')
+    return render_template('recipe/index2.html', recipe=recipe, Ingredients=Ingredients, Instructions=Instructions)
 
 
 

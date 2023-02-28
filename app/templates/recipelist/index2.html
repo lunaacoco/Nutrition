@@ -13,10 +13,10 @@
             <p>Carbs</p>
             <p>Proteins</p>
             <p>Fat</p>
-            <p class="grid_value_start">832 kcal</p>
-            <p>20g</p>
-            <p>30g</p>
-            <p>7g</p>
+            <p class="grid_value_start">{{kcal}} kcal</p>
+            <p>{{carbs}} g</p>
+            <p>{{protein}} g</p>
+            <p>{{fat}} g</p>
         </div>
     </div>
 </div>
@@ -27,10 +27,10 @@
     {% for recipe in recipes %}
         <div class="grid_values">
             <a href="/recipe/{{recipe.id}}" style="text-decoration: none; color: black;"><h3>{{recipe.name}}</h3></a>
-            <p class="grid_value_start">{{recipe.kcal}}</p>
-            <p>{{recipe.carbs}}</p>
-            <p>{{recipe.protein}}</p>
-            <p>{{recipe.fat}}</p>
+            <p class="grid_value_start">{{recipe.kcal}}kcal</p>
+            <p>{{recipe.carbs}} g</p>
+            <p>{{recipe.protein}} g</p>
+            <p>{{recipe.fat}} g</p>
         </div>
     {%endfor%} 
 
