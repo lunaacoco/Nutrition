@@ -1,0 +1,12 @@
+body {
+    font-family: Arial, sans-serif;
+    font-size: 20px;
+    text-align: center;
+    margin-top: 20%;
+  }
+
+
+.darkmode {
+    color: white;
+    background: #444;
+  }

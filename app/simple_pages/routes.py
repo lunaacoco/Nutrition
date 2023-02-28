@@ -7,3 +7,7 @@ blueprint = Blueprint('simple_pages', __name__)
 @blueprint.route('/')
 def index():
     return render_template('simple_pages/index.html')
+
+@blueprint.route('/test')
+def test():
+    return render_template('simple_pages/test.html')
