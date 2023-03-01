@@ -60,7 +60,7 @@ body {
 }
 
 
-
+/*RECIPELIST*/
 .header {
     height: 200px;
     padding-top: 20px;
@@ -95,6 +95,8 @@ body {
     align-self: end;
 }
 
+/*RECIPE*/
+
 .headerimg {
     object-fit: cover;
     width: 100%;
@@ -106,3 +108,13 @@ body {
     color: gray;
 }
 
+
+/*ADD RECIPE*/
+.grid_form {
+    display: grid;
+    grid-template-columns: 1fr 2fr 10px;
+}  
+
+textarea {
+    width: 100%
+}

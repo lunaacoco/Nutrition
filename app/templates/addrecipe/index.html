@@ -9,9 +9,32 @@
     <h2>Please enter your recipe:</h2>
 
     <form method="post">
-        <label for="name">Name: </label>
-        <input name="name" id="name"> kcal
-
+        <div class="grid_form">
+            <label for="name">Name: </label>
+            <input name="name" id="name" required>
+            <br>
+            <label for="kcal">kcal: </label>
+            <input name="kcal" id="kcal" required> kcal
+            <br>
+            <label for="carbs">Carbs: </label>
+            <input name="carbs" id="carbs" required>g
+            <br>
+            <label for="protein">Protein: </label>
+            <input name="protein" id="protein" required>g
+            <br>
+            <label for="fat">Fat: </label>
+            <input name="fat" id="fat" required>g
+        </div>
+        <p>Please split ingredients and steps with " ; "</p>
+        <label for="ingredients">Ingredients: </label>
+        <br>
+        <textarea name="ingredients" id="ingredients least" rows="10" required></textarea>
+        <br>
+        <label for="Instructions">Instructions: </label>
+        <br>
+        <textarea name="Instructions" id="Instructions" rows="10" required></textarea>
+        <br>
+        <input type="submit" name="submit" value="Submit">
     </form>
 
 

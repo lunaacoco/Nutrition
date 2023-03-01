@@ -1,5 +1,5 @@
 from flask import Flask
-from . import recipelist, simple_pages
+from . import recipelist, simple_pages, addrecipe
 from app.extentions.database import db, migrate
 
 #This file brings all templates and the database together and initialises the Flask server to be run 
