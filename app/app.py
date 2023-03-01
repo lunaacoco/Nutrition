@@ -17,6 +17,7 @@ def create_app():
 def register_blueprints(app: Flask):
     app.register_blueprint(recipelist.routes.blueprint)
     app.register_blueprint(simple_pages.routes.blueprint)
+    app.register_blueprint(addrecipe.routes.blueprint)
 
 def register_extentions(app: Flask):
     db.init_app(app)
