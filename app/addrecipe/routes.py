@@ -14,14 +14,16 @@ def get_addrecipe():
 @blueprint.post('/addrecipe')
 def post_addrecipe():
     name = request.form['name']
+    slug = request.form['slug']
     kcal = int(request.form['kcal'])
     carbs = (request.form['carbs'])
     protein = request.form['protein']
     fat = request.form['fat']
+    picture_url = '../../static/images/' + slug + '.jpg'
     ingredients = request.form['ingredients']
     content = request.form['Instructions']
 
-    new_recipe = Recipe(name=name, kcal=kcal, carbs=carbs, protein=protein, fat=fat, ingredients=ingredients, content=content)
+    new_recipe = Recipe(name=name,slug=slug,  kcal=kcal, carbs=carbs, protein=protein, fat=fat,picture_url=picture_url, ingredients=ingredients, content=content)
     db.session.add(new_recipe)
     db.session.commit()
     return render_template('addrecipe/success.html')
