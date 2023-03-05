@@ -1,6 +1,7 @@
 from flask import Blueprint, render_template, request
 from app.recipelist.models import Recipe
 from app.extentions.database import db
+from flask_login import login_required
 
 
 blueprint = Blueprint('addrecipe', __name__)
@@ -8,10 +9,12 @@ blueprint = Blueprint('addrecipe', __name__)
 #render Template for adding the recipe
 
 @blueprint.get('/addrecipe')
+@login_required
 def get_addrecipe():
     return render_template('addrecipe/index.html')
 
 @blueprint.post('/addrecipe')
+@login_required
 def post_addrecipe():
     name = request.form['name']
     slug = request.form['slug']
