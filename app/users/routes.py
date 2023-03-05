@@ -47,7 +47,7 @@ def post_login():
       raise Exception('The password was incorrect')
     
     login_user(user)
-    return redirect(url_for('simple_pages.index'))
+    return render_template('simple_pages/index.html')
   except Exception as error_message:
     error=error_message or 'An error occured'
     return render_template('users/login.html', error=error)
