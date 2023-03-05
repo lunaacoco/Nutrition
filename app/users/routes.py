@@ -1,7 +1,7 @@
 from flask import Blueprint, render_template, request, url_for, redirect
 from .models import User
 from werkzeug.security import generate_password_hash, check_password_hash
-from flask_login import login_user
+from flask_login import login_user, logout_user
 
 blueprint = Blueprint('users', __name__)
 
@@ -26,7 +26,7 @@ def post_register():
     user.save()
 
     login_user(user)
-    return redirect(url_for('index.index'))
+    return render_template('simple_pages/index.html')
   except Exception as error_message:
     error= error_message or 'An error occured'
     return render_template('users/register.html', error=error)
@@ -47,11 +47,13 @@ def post_login():
       raise Exception('The password was incorrect')
     
     login_user(user)
-    return redirect(url_for('index.index'))
+    return redirect(url_for('simple_pages.index'))
   except Exception as error_message:
     error=error_message or 'An error occured'
     return render_template('users/login.html', error=error)
 
 @blueprint.get('/logout')
 def logout():
-  return 'User logged out'
+  logout_user()
+
+  return redirect(url_for('users.get_login'))
